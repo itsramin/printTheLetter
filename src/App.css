@@ -1,86 +1,155 @@
-/* Center the app on the page */
-body,
-html {
+/* General Styles */
+body {
   margin: 0;
-  padding: 0;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f3f4f6;
-  font-family: Arial, sans-serif;
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
 }
 
-/* App container */
 .app-container {
-  text-align: center;
-  background-color: white;
-  padding: 24px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
 }
 
-/* App title */
 .app-title {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 24px;
-  color: #1e293b;
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
-/* App content */
 .app-content {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 10px;
 }
 
-/* Input group */
 .input-group {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 8px;
+  margin-bottom: 15px;
 }
 
-/* Input label */
 .input-label {
-  font-weight: 500;
-  color: #374151;
+  display: block;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  color: #555;
 }
 
-/* File input */
-.file-input {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 90%;
-}
-
-/* Number input */
+.file-input,
 .number-input {
-  padding: 8px;
+  width: 90%;
+  padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 200px;
-}
-
-/* Action button */
-.action-button {
-  padding: 8px 16px;
-  background-color: #3b82f6;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  border-radius: 5px;
   font-size: 1rem;
 }
 
+.action-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
 .action-button:disabled {
-  background-color: #9ca3af;
+  background-color: #bdc3c7;
   cursor: not-allowed;
 }
 
 .action-button:hover:not(:disabled) {
-  background-color: #2563eb;
+  background-color: #2980b9;
+}
+
+.app-description {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.app-description p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Highlighted Printing Instructions */
+.print-instruction {
+  background: #fff3cd;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ffeeba;
+  width: 100%;
+  max-width: 800px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.print-instruction h3 {
+  font-size: 1.5rem;
+  color: #856404;
+  margin-bottom: 10px;
+}
+
+.print-instruction p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #856404;
+}
+
+.print-instruction strong {
+  color: #d9480f;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 2rem;
+  }
+
+  .app-content,
+  .app-description,
+  .print-instruction {
+    padding: 15px;
+  }
+
+  .file-input,
+  .number-input,
+  .action-button {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-title {
+    font-size: 1.5rem;
+  }
+
+  .app-content,
+  .app-description,
+  .print-instruction {
+    padding: 10px;
+  }
+
+  .file-input,
+  .number-input,
+  .action-button {
+    font-size: 0.8rem;
+  }
 }

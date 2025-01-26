@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { jsPDF } from "jspdf"; 
-import "./App.css"; 
+import { jsPDF } from "jspdf";
+import "./App.css";
 
 interface ImagePart {
   dataUrl: string;
@@ -12,7 +12,7 @@ interface ImagePart {
 
 function App() {
   const [image, setImage] = useState<string | null>(null);
-  const [gridSize, setGridSize] = useState<number>(20); // Default grid size (4x4)
+  const [gridSize, setGridSize] = useState<number>(20); // Default grid size (20x20)
   const [numGroups, setNumGroups] = useState<number>(5); // Default number of groups
   const [loading, setLoading] = useState<boolean>(false); // Loading state for the button
 
@@ -194,15 +194,26 @@ function App() {
 
     // Save the PDF
     pdf.save("combined_images.pdf");
-    alert("PDF exported successfully!");
   };
 
   return (
     <div className="app-container">
-      <h1 className="app-title">Print the Letter</h1>
+      <h1 className="app-title">Revive the Art of Letter Writing</h1>
+      <div className="app-description">
+        <p>
+          In a world dominated by digital communication, the charm of physical
+          letters is often lost. This tool allows you to create a unique,
+          mysterious letter experience. Upload your letter as an image, and
+          we'll convert it into a PDF where the content is divided into multiple
+          parts. The receiver will need to print all pages and overlay them to
+          reveal the original message. Bring back the joy of receiving and
+          decoding a personal, handwritten letter!
+        </p>
+      </div>
+
       <div className="app-content">
         <div className="input-group">
-          <label className="input-label">Upload Image:</label>
+          <label className="input-label">Upload Your Letter as an Image:</label>
           <input
             type="file"
             accept="image/*"
@@ -233,8 +244,20 @@ function App() {
           disabled={loading}
           className="action-button"
         >
-          {loading ? "Processing..." : "Divide and Export PDF"}
+          {loading ? "Processing..." : "Create Mystery Letter PDF"}
         </button>
+      </div>
+
+      {/* Highlighted Section for Printing Instructions */}
+      <div className="print-instruction">
+        <h3>Important Printing Instructions:</h3>
+        <p>
+          <strong>
+            Print all pages of the PDF on a single sheet of paper.
+          </strong>{" "}
+          Overlay the printed pages to reveal the original message. This ensures
+          the letter remains a mystery until the pages are combined!
+        </p>
       </div>
     </div>
   );
