@@ -1,50 +1,34 @@
-# React + TypeScript + Vite
+# Revive the Art of Letter Writing 🖋️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **Revive the Art of Letter Writing**, a unique web application that brings back the charm of physical letters in a fun and mysterious way! This tool allows you to upload a handwritten letter as an image, divide it into multiple parts, and generate a PDF. The receiver must print all pages of the PDF on a **single sheet of paper** and overlay them to reveal the original message. It’s a modern twist on the classic art of letter writing!
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Demo
 
-## Expanding the ESLint configuration
+Check out the [demo](https://print-the-letter.vercel.app/) to see it in action!
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 🚀 How It Works
 
-- Configure the top-level `parserOptions` property like this:
+1. **Upload Your Letter**: Upload an image of your handwritten letter.
+2. **Set Grid Size**: Choose how many parts the letter should be divided into (e.g., 20x20 grid).
+3. **Set Number of Groups**: Decide how many groups the parts should be divided into.
+4. **Generate PDF**: Click "Create Mystery Letter PDF" to generate the PDF.
+5. **Print and Reveal**: The receiver prints all pages of the PDF on a **single sheet of paper** and overlays them to reveal the original message.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 🛠️ Setup Instructions
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Prerequisites
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+- Node.js (v16 or higher)
+- npm (v8 or higher)
+
+### Installation
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/itsramin/printTheLetter.git
+   cd printTheLetter
+   ```
