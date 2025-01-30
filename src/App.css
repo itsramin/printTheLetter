@@ -1,155 +1,174 @@
-/* General Styles */
+/* App.css */
 body {
   margin: 0;
-  font-family: "Arial", sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
   background-color: #f4f4f9;
   color: #333;
+  line-height: 1.6;
 }
 
 .app-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  max-width: 800px;
+  margin: 2rem auto;
   padding: 20px;
-  min-height: 100vh;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .app-title {
-  font-size: 2.5rem;
+  text-align: center;
   color: #2c3e50;
+  font-size: 2.5rem;
   margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.app-description {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 30px;
   text-align: center;
 }
 
 .app-content {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 500px;
-  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .input-group {
-  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .input-label {
-  display: block;
   font-size: 1rem;
-  margin-bottom: 5px;
-  color: #555;
+  color: #2c3e50;
+  font-weight: 600;
 }
 
 .file-input,
 .number-input {
-  width: 90%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
   font-size: 1rem;
+  color: #333;
+  background-color: #f9f9f9;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.file-input:focus,
+.number-input:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 8px rgba(52, 152, 219, 0.3);
 }
 
 .action-button {
-  width: 100%;
-  padding: 10px;
+  padding: 12px 20px;
   background-color: #3498db;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.action-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
 }
 
 .action-button:disabled {
   background-color: #bdc3c7;
   cursor: not-allowed;
+  transform: none;
 }
 
-.action-button:hover:not(:disabled) {
-  background-color: #2980b9;
-}
-
-.app-description {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  max-width: 800px;
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.app-description p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #555;
-}
-
-/* Highlighted Printing Instructions */
 .print-instruction {
-  background: #fff3cd;
+  margin-top: 30px;
   padding: 20px;
-  border-radius: 10px;
-  border: 1px solid #ffeeba;
-  width: 100%;
-  max-width: 800px;
-  margin-top: 20px;
-  text-align: center;
+  background-color: #ecf0f1;
+  border-radius: 8px;
+  border-left: 5px solid #3498db;
 }
 
 .print-instruction h3 {
-  font-size: 1.5rem;
-  color: #856404;
+  color: #2c3e50;
   margin-bottom: 10px;
+  font-weight: 700;
 }
 
 .print-instruction p {
   font-size: 1rem;
+  color: #555;
   line-height: 1.6;
-  color: #856404;
 }
 
 .print-instruction strong {
-  color: #d9480f;
+  color: #e74c3c;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .app-container {
+    padding: 15px;
+  }
+
   .app-title {
     font-size: 2rem;
   }
 
-  .app-content,
-  .app-description,
-  .print-instruction {
-    padding: 15px;
+  .app-description {
+    font-size: 1rem;
   }
 
   .file-input,
-  .number-input,
+  .number-input {
+    padding: 10px;
+  }
+
   .action-button {
+    padding: 10px 15px;
     font-size: 0.9rem;
+  }
+
+  .print-instruction {
+    padding: 15px;
   }
 }
 
 @media (max-width: 480px) {
-  .app-title {
-    font-size: 1.5rem;
-  }
-
-  .app-content,
-  .app-description,
-  .print-instruction {
+  .app-container {
     padding: 10px;
   }
 
+  .app-title {
+    font-size: 1.8rem;
+  }
+
+  .app-description {
+    font-size: 0.9rem;
+  }
+
   .file-input,
-  .number-input,
+  .number-input {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+
   .action-button {
+    padding: 8px 12px;
     font-size: 0.8rem;
+  }
+
+  .print-instruction {
+    padding: 10px;
   }
 }
