@@ -115,6 +115,29 @@ body {
   color: #e74c3c;
 }
 
+.github-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 12px 20px;
+  background-color: #24292e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.github-button:hover {
+  background-color: #1a1f24;
+  transform: translateY(-2px);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .app-container {
@@ -141,6 +164,17 @@ body {
 
   .print-instruction {
     padding: 15px;
+  }
+  .github-button {
+    top: 10px;
+    right: 10px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .github-button svg {
+    height: 16px;
+    width: 16px;
   }
 }
 
@@ -170,5 +204,16 @@ body {
 
   .print-instruction {
     padding: 10px;
+  }
+  .github-button {
+    position: static;
+    margin: 10px auto;
+    font-size: 0.8rem;
+    padding: 8px 12px;
+  }
+
+  .github-button svg {
+    height: 14px;
+    width: 14px;
   }
 }
