@@ -192,7 +192,6 @@ function App() {
       );
     }
 
-    // Save the PDF
     pdf.save("combined_images.pdf");
   };
 
@@ -243,7 +242,7 @@ function App() {
           />
         </div>
         <div className="input-group">
-          <label className="input-label">Number of Groups:</label>
+          <label className="input-label">Number of Pages:</label>
           <input
             type="number"
             value={numGroups}
@@ -260,7 +259,6 @@ function App() {
         </button>
       </div>
 
-      {/* Highlighted Section for Printing Instructions */}
       <div className="print-instruction">
         <h3>Important Printing Instructions:</h3>
         <p>
